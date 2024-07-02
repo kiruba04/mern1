@@ -15,13 +15,13 @@ dotenv.config();
 /* middle ware*/
 app.use(express.json())
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://merry-douhua-01a295.netlify.app',
   credentials: true
 }));
 app.use(cookie());
 
 app.use((req, res, next) => {
-  res.setHeader('Access-Control-Allow-Origin', 'http://localhost:3000'); // Replace with your actual frontend URL
+  res.setHeader('Access-Control-Allow-Origin', 'https://merry-douhua-01a295.netlify.app'); // Replace with your actual frontend URL
   res.setHeader('Access-Control-Allow-Credentials', 'true');
   next();
 });

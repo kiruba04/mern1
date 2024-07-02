@@ -48,6 +48,7 @@ export const register = async (req, res) => {
       res.cookie("access_token", token, {
         httpOnly: true,
         secure: true, // Ensure this is set if using HTTPS
+        sameSite: 'None',
         maxAge: 24 * 60 * 60 // 24 hours in seconds
       }).status(200).json({ auth: true, token }); // Sending auth and token in response
     } catch (err) {
@@ -79,6 +80,7 @@ export const login = async (req, res) => {
   res.cookie("access_token", token, {
     httpOnly: true,
     secure: true, // Ensure this is set if using HTTPS
+    sameSite: 'None',
     maxAge:24*60*60*60
   }).status(200).json({ auth: true, token, userType,user}); // Send auth, token, and userType in one response
 };
